@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsTree test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+</head>
+<body>
+    <button>demo button</button>
+    <div id="using_json"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    
+    <script>
+        $(function () {
+
+            $.jstree.defaults.core.themes.icons = false;
+            var $treeviewJson = $("#using_json");
+
+            $treeviewJson.jstree({
+                "plugins": ["checkbox"], 'core': {
+'data': [{
+    'text': 'Save',
+    'children': [{
+        'text': 'Update Attributes/relations/DO and Save (nbCall=1 / ELA=104068ms)',
+        'children': [{
+            'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=93ms) ',
+            'children': [
+                'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+            ]
+        },
+        'Save Document (nbCall=1 / ELA=141ms) ', {
+            'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=31ms)',
+            'children': [
+                'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+            ]
+        },
+        {
+            'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=31ms)',
+            'children': [
+                'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+            ]
+        },
+        {
+            'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=31ms)',
+            'children': [
+                'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+            ]
+        }]
+    },
+    {
+        'text': 'Open',
+        'children': [{
+            'text': 'Update Attributes/relations/DO and Save (nbCall=1 / ELA=104068ms)',
+            'children': [{
+                'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=93ms) ',
+                'children': [
+                    'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+                ]
+            },
+            'Save Document (nbCall=1 / ELA=141ms) ', {
+                'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=31ms)',
+                'children': [
+                    'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+                ]
+            },
+            {
+                'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=31ms)',
+                'children': [
+                    'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+                ]
+            },
+            {
+                'text': 'Update Attributes/Relations/DO (nbCall=1 / ELA=31ms)',
+                'children': [
+                    'ENOEDC5DocumentService::GetLinks (nbCall=1 / ELA=0ms)'
+                ]
+            }]
+        }]
+    }]
+}]
+                }
+            });
+
+            $treeviewJson.on('loaded.jstree', function () {
+                $treeviewJson.jstree('open_all');
+            });
+
+        });
+    </script>
+</body>
+</html>
